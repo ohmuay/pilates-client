@@ -5,9 +5,9 @@ export default function Footer() {
   return (
     <>
       <footer className="bg-maingreen">
-        <div className="flex justify-between text-maintext font-light text-base items-center px-4 py-2">
-          <div className="flex text-sm font-light">Pilates Studio</div>
-          <div className="flex text-sm font-light gap-1 justify-center items-center">
+        <div className="flex justify-between text-maintext font-light items-center px-4 py-5">
+          <div className="flex text-l font-light">Pilates Studio</div>
+          <div className="flex text-l font-light gap-1 justify-center items-center">
             Copyright
             <FontAwesomeIcon icon={faCopyright} size="sm" />
             2023

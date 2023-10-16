@@ -3,6 +3,7 @@ import { useAuth } from "../hooks/use-auth.js";
 import registerSchema from "../validation/auth-valudate.js";
 import RegisterInput from "../attribute/authenticate/RegisterInput.jsx";
 import ErrorMessage from "../attribute/authenticate/ErrorMessage.jsx";
+import pilateslogin from "../image/pilateslogin.jpg";
 
 const validateRegister = (input) => {
   console.log(input);
@@ -50,24 +51,25 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="flex">
-      <div>
+    <div className="flex flex-auto pt-20 justify-around items-center h-[100%]">
+      <div className="w-[50%]">
         <img
-          src="https://i0.wp.com/wewellnessclinic.com/home/wp-content/uploads/2023/09/NAN_0497-copy-1.jpg?fit=1814%2C1207&ssl=1"
+          src={pilateslogin}
           alt="pic"
+          className="flex border shadow rounded-lg"
         />
       </div>
-      <div className="flex flex-col justify-center items-center p-10 gap-5">
-        <span className="text-4xl font-semibold text-maintext">
+      <div className="flex flex-col justify-center items-center px-12 gap-3">
+        <span className="text-4xl font-semibold text-secondtext2 drop-shadow-md">
           Create New Account
         </span>
-        <span className="text-xl font-light text-thirdtext">
+        <span className="text-xl font-light text-thirdtext drop-shadow-md pb-3">
           Welcome to the world of good health for yourself.
         </span>
 
         <form
           onSubmit={handleSubmitForm}
-          className="bg-maingreen flex flex-col gap-5 p-8 rounded-lg min-w-[35rem] min-h-[15rem]"
+          className="bg-maingreen flex flex-col justify-center items-center gap-5 p-7 rounded-lg min-w-[35rem] min-h-[15rem]"
         >
           <RegisterInput
             type="text"
@@ -132,11 +134,9 @@ export default function RegisterPage() {
             value={input.profileImg}
             onChange={handleInput}
           />
-          <div className="mx-auto col-span-full">
-            <button className="bg-maindark rounded-lg text-white p-2 text-lg font-semibold min-w-[15rem]">
-              Sign Up
-            </button>
-          </div>
+          <button className="bg-maindark hover:bg-secondtext2 rounded-lg text-white p-2 text-lg font-semibold w-[170px]">
+            Sign Up
+          </button>
         </form>
       </div>
     </div>

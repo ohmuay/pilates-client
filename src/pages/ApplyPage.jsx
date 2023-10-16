@@ -14,12 +14,12 @@ export default function ApplyPage() {
   }, []);
 
   return (
-    <div className="flex flex-col h-full justify-center px-20 py-15">
+    <div className="flex flex-col justify-center px-10 pt-20">
       <div className="flex flex-col justify-center items-center gap-4">
-        <div className="text-4xl font-semibold text-maindark">
+        <div className="text-4xl font-semibold text-secondtext2 drop-shadow-md pt-10">
           Apply Pilates Class
         </div>
-        <div className="text-xl font-light text-thirdtext p-5">
+        <div className="text-xl font-light text-thirdtext pb-5">
           Welcome to the world of good health for yourself.
         </div>
       </div>
@@ -30,11 +30,10 @@ export default function ApplyPage() {
             id={item.id}
             name={item.packageName}
             amount={`Total ${item.amountTotal} times`}
-            pricepertime={`$${item.pricePerTime}/time`}
-            totalprice={`$${item.totalPrice}`}
+            pricepertime={`${item.pricePerTime} bath/time`}
+            totalprice={`${item.totalPrice} bath`}
           />
         ))}
-        ;
       </div>
     </div>
   );

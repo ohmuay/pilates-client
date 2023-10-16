@@ -6,40 +6,45 @@ export default function Header() {
   const navigate = useNavigate();
 
   return (
-    <header className="flex justify-between items-center px-10 py-4 bg-m text-maintext bg-maingreen">
-      <div className="text-3xl font-semibold">Pilates Studio</div>
+    <header
+      className="flex justify-between items-center px-10 py-5 text-maintext bg-maingreen 
+    fixed top-0 left-0 right-0 z-30"
+    >
+      <div className="text-3xl font-semibold drop-shadow-lg">
+        PILATES STUDIO
+      </div>
       <ul className="text-xl flex flex-row gap-10">
-        <li>
-          <Link to="/">Home</Link>
+        <li className="hover:text-secondtext2 font-semibold">
+          <Link to="/">HOME</Link>
         </li>
         {getAccessToken() ? (
           <>
-            <li>
-              <Link to="/profile">Profile</Link>
+            <li className="hover:text-secondtext2 font-semibold">
+              <Link to="/profile">PROFILE</Link>
             </li>
-            <li>
-              <Link to="/applyclass">Applyclass</Link>
+            <li className="hover:text-secondtext2 font-semibold">
+              <Link to="/applyclass">APPLYCLASS</Link>
             </li>
-            <li>
-              <Link to="/reservation">Reservation</Link>
+            <li className="hover:text-secondtext2 font-semibold">
+              <Link to="/reservation">RESERVATION</Link>
             </li>
             <li
-              className="cursor-pointer"
+              className="cursor-pointer hover:text-secondtext2 font-semibold"
               onClick={() => {
                 removeAccessToken();
                 navigate("/");
               }}
             >
-              Logout
+              LOGOUT
             </li>
           </>
         ) : (
           <>
-            <li>
-              <Link to="/auth/login">Login</Link>
+            <li className="hover:text-secondtext2 font-semibold">
+              <Link to="/auth/login">LOGIN</Link>
             </li>
-            <li>
-              <Link to="/auth/register">Register</Link>
+            <li className="hover:text-secondtext2 font-semibold">
+              <Link to="/auth/register">REGISTER</Link>
             </li>
           </>
         )}

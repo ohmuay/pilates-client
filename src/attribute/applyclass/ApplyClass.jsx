@@ -14,14 +14,14 @@ export default function ApplyClass({
       {name === "PLUS" ? (
         <>
           <div className="flex justify-around items-center border border-maintext rounded-xl p-20 mb-6 bg-maingreen">
-            <div className="font-bold text-maindark text-5xl">{name}</div>
+            <div className="font-bold text-maindark text-4xl">{name}</div>
             <div className="text-maintext text-xl">{amount}</div>
             <div className="text-maintext text-xl">{pricepertime}</div>
-            <div className="text-maintext font-semibold text-5xl">
+            <div className="text-maintext font-semibold text-4xl">
               {totalprice}
             </div>
             <button
-              className="bg-maindark rounded-full text-mainlight text-2xl min-w-[180px] min-h-[65px] hover:bg-secondtext2"
+              className="bg-maindark rounded-full text-mainlight text-xl min-w-[170px] min-h-[65px] hover:bg-secondtext2"
               onClick={() => navigate(`/transaction?packageId=${id}`)}
             >
               Choose
@@ -31,7 +31,7 @@ export default function ApplyClass({
       ) : (
         <>
           <div className="flex justify-around items-center border border-maintext rounded-xl p-20 mb-6">
-            <div className="font-semibold text-maintext text-4xl">{name}</div>
+            <div className="font-semibold text-maintext text-3xl">{name}</div>
             <div className="text-maintext text-xl">{amount}</div>
             <div className="text-maintext text-xl">{pricepertime}</div>
             <div className="text-maintext font-semibold text-3xl">

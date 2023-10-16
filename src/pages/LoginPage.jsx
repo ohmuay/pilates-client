@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useAuth } from "../hooks/use-auth";
-import LoginInput from "../attribute/authenticate/LoginInput";
-import Joi from "joi";
-import ErrorMessage from "../attribute/authenticate/ErrorMessage";
 import { useNavigate } from "react-router-dom";
+import Joi from "joi";
+import LoginInput from "../attribute/authenticate/LoginInput";
+import ErrorMessage from "../attribute/authenticate/ErrorMessage";
+import pilateslogin from "../image/pilateslogin.jpg";
 
 const loginSchema = Joi.object({
   email: Joi.string().email({ tlds: false }).required(),
@@ -52,20 +53,23 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex">
-      <div className="">
+    <div className="flex flex-auto pt-20 justify-around items-center h-[100%]">
+      <div className="w-[50%]">
         <img
-          src="https://i0.wp.com/wewellnessclinic.com/home/wp-content/uploads/2023/09/NAN_0497-copy-1.jpg?fit=1814%2C1207&ssl=1"
-          alt="pic"
+          src={pilateslogin}
+          alt="piclogin"
+          className="flex border shadow rounded-lg"
         />
       </div>
-      <div className="flex flex-col justify-center items-center p-10 gap-5">
-        <span className="text-5xl font-semibold text-maindark">Sign In</span>
-        <span className="text-xl font-light text-thirdtext">
+      <div className="flex flex-col justify-center items-center px-12 gap-7">
+        <span className="text-5xl font-semibold text-secondtext2 drop-shadow-md">
+          SIGN IN
+        </span>
+        <span className="text-xl font-light text-thirdtext drop-shadow-md">
           Welcome to the world of good health for yourself.
         </span>
         <form
-          className="  bg-maingreen flex flex-col gap-5 p-8 rounded-lg min-w-[35rem] min-h-[15rem]"
+          className="  bg-maingreen flex flex-col justify-center items-center gap-5 p-8 rounded-lg min-w-[35rem] min-h-[15rem]"
           onSubmit={handleSubmitForm}
         >
           <LoginInput
@@ -86,11 +90,9 @@ export default function LoginPage() {
             Error={error.password}
           />
           {error.password && <ErrorMessage message="Password is required" />}
-          <div className="mx-auto col-span-full">
-            <button className="bg-maindark rounded-lg text-white p-2 text-lg font-semibold min-w-[10rem]">
-              Sign in
-            </button>
-          </div>
+          <button className="bg-maindark hover:bg-secondtext2 rounded-xl text-white p-2 text-lg font-semibold w-[170px]">
+            Sign in
+          </button>
         </form>
       </div>
     </div>
