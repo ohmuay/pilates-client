@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import { removeAccessToken, getAccessToken } from "../utils/local-storage";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../hooks/use-auth";
 
 export default function Header() {
   const navigate = useNavigate();
+
+  const { authUser } = useAuth();
 
   return (
     <header
@@ -14,32 +17,58 @@ export default function Header() {
         PILATES STUDIO
       </div>
       <ul className="text-xl flex flex-row gap-10">
-        <li className="hover:text-secondtext2 font-semibold">
-          <Link to="/">HOME</Link>
-        </li>
         {getAccessToken() ? (
-          <>
-            <li className="hover:text-secondtext2 font-semibold">
-              <Link to="/profile">PROFILE</Link>
-            </li>
-            <li className="hover:text-secondtext2 font-semibold">
-              <Link to="/applyclass">APPLYCLASS</Link>
-            </li>
-            <li className="hover:text-secondtext2 font-semibold">
-              <Link to="/reservation">RESERVATION</Link>
-            </li>
-            <li
-              className="cursor-pointer hover:text-secondtext2 font-semibold"
-              onClick={() => {
-                removeAccessToken();
-                navigate("/");
-              }}
-            >
-              LOGOUT
-            </li>
-          </>
+          authUser?.role == "USER" ? (
+            <>
+              <li className="hover:text-secondtext2 font-semibold">
+                <Link to="/profile">PROFILE</Link>
+              </li>
+              <li className="hover:text-secondtext2 font-semibold">
+                <Link to="/applyclass">APPLYCLASS</Link>
+              </li>
+              <li className="hover:text-secondtext2 font-semibold">
+                <Link to="/reservation">RESERVATION</Link>
+              </li>
+              <li
+                className="cursor-pointer hover:text-secondtext2 font-semibold"
+                onClick={() => {
+                  removeAccessToken();
+                  navigate("/");
+                }}
+              >
+                LOGOUT
+              </li>
+            </>
+          ) : (
+            <>
+              <li className="hover:text-secondtext2 font-semibold">
+                <Link to="/adtransaction">TRANSACTION</Link>
+              </li>
+              <li className="hover:text-secondtext2 font-semibold">
+                <Link to="/adclassroom">CLASSROOM</Link>
+              </li>
+              <li className="hover:text-secondtext2 font-semibold">
+                <Link to="/adreserve">RESERVATION</Link>
+              </li>
+              <li className="hover:text-secondtext2 font-semibold">
+                <Link to="/admember">MEMBER</Link>
+              </li>
+              <li
+                className="cursor-pointer hover:text-secondtext2 font-semibold"
+                onClick={() => {
+                  removeAccessToken();
+                  navigate("/");
+                }}
+              >
+                LOGOUT
+              </li>
+            </>
+          )
         ) : (
           <>
+            <li className="hover:text-secondtext2 font-semibold">
+              <Link to="/">HOME</Link>
+            </li>
             <li className="hover:text-secondtext2 font-semibold">
               <Link to="/auth/login">LOGIN</Link>
             </li>

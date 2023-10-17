@@ -1,27 +1,33 @@
-import { useLocation } from "react-router-dom";
-import promtpay from "../image/promtpay.png";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+// import { toast } from "react-toastify";
+import promtpay from "../image/promtpay.png";
+import axios from "../config/axios";
 
 export default function PaymentPage() {
   const [file, setFile] = useState(null);
-
-  console.log(file);
+  // console.log(file);
 
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const packageId = params.get("packageId");
-  console.log(packageId);
+  //console.log(packageId);
+
+  const navigate = useNavigate();
 
   const handleSubmitForm = async (e) => {
     try {
       const formData = new FormData();
       e.preventDefault();
       if (file) {
-        formData.append("patmentImg", file);
+        formData.append("paymentImg", file);
       }
       if (packageId) {
         formData.append("packageId", packageId);
       }
+      await axios.post("/transaction", formData);
+      // toast.success("Success");
+      navigate("/profile");
     } catch (err) {
       console.log(err);
     }
@@ -44,7 +50,14 @@ export default function PaymentPage() {
         className="flex flex-col items-center p-5 gap-4"
         onSubmit={handleSubmitForm}
       >
-        <input type="file" onChange={(e) => setFile(e.target.files)} />
+        <input
+          type="file"
+          onChange={(e) => {
+            if (e.target.files[0]) {
+              setFile(e.target.files[0]);
+            }
+          }}
+        />
 
         <button
           className="flex justify-center items-center w-[120px] h-[35px] bg-maindark 

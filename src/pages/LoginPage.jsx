@@ -49,7 +49,8 @@ export default function LoginPage() {
     }
     setError({});
     login(input).catch((err) => console.log(err));
-    if (authUser) navigate("/profile");
+    if (authUser?.role === "USER") navigate("/profile");
+    else navigate("/adtransaction");
   };
 
   return (

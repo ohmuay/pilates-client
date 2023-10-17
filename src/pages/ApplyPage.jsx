@@ -38,7 +38,3 @@ export default function ApplyPage() {
     </div>
   );
 }
-
-{
-  /* //packages.map((package)=><ApplyClass name={package.name} amount={`Total ${} time`}/>) */
-}

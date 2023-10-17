@@ -22,7 +22,7 @@ export default function ApplyClass({
             </div>
             <button
               className="bg-maindark rounded-full text-mainlight text-xl min-w-[170px] min-h-[65px] hover:bg-secondtext2"
-              onClick={() => navigate(`/transaction?packageId=${id}`)}
+              onClick={() => navigate(`/payment?packageId=${id}`)}
             >
               Choose
             </button>
@@ -39,7 +39,7 @@ export default function ApplyClass({
             </div>
             <button
               className="border-[2px] border-maindark rounded-full text-maindark text-lg min-w-[150px] min-h-[60px] hover:bg-secondtext"
-              onClick={() => navigate(`/transaction?packageId=${id}`)}
+              onClick={() => navigate(`/payment?packageId=${id}`)}
             >
               Choose
             </button>
