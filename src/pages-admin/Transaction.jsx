@@ -4,7 +4,7 @@ import TransLists from "../attribute/admin/TransLists";
 
 export default function Transaction() {
   const [lists, setList] = useState([]);
-  console.log(lists);
+  // console.log(lists);
 
   useEffect(() => {
     axios
@@ -12,6 +12,8 @@ export default function Transaction() {
       .then((res) => setList(res.data.transactions))
       .catch((err) => console.log(err));
   }, []);
+
+  // const
 
   return (
     <div className="flex flex-col justify-center items-center px-10 pt-20">

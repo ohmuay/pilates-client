@@ -15,8 +15,6 @@ export default function ProfilePage() {
 
   const navigate = useNavigate();
 
-  //console.log(profile);
-
   return (
     <div className="flex pt-10 justify-around items-center h-[100%]">
       <div className="flex flex-col justify-center items-center px-5 gap-10 ">
