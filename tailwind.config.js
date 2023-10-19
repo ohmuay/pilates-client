@@ -12,7 +12,7 @@ export default {
         maintext: "#1D3124",
         secondtext: "#E59560",
         secondtext2: "#D67940",
-        thirdtext: "#71717A"
+        thirdtext: "#9e9e9e"
       }
     },
   },

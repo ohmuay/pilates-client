@@ -15,7 +15,7 @@ export default function HomePage() {
         <span className="text-7xl font-semibold text-secondtext2 pt-10 pb-8 drop-shadow-lg tracking-widest">
           PILATES STUDIO
         </span>
-        <span className="text-xl text-thirdtext pb-20 drop-shadow-m tracking-widest">
+        <span className="text-xl text-thirdtext pb-20 tracking-widest">
           Healthy lifestyle in your life
         </span>
         <div className="h-[750px] overflow-hidden flex justify-center items-center">

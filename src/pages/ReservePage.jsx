@@ -25,6 +25,7 @@ export default function ReservePage() {
   const fetchReserveLists = async () => {
     try {
       const result = await axios.get("/user/reservelist");
+      console.log("reservation list", result.data.reservelists);
       setReserveList(result.data.reservelists);
     } catch (err) {
       console.log(err);
@@ -37,10 +38,16 @@ export default function ReservePage() {
   }, []);
 
   const handleSubmit = async () => {
-    await axios.post("/user/reserve", {
+    const res = await axios.post("/user/reserve", {
       date: dayjs(selectDate),
       classroomId: selectClass.id,
     });
+    const newReserve = {
+      classroom: { classname: `Pilates${res.data.reserved.classroomId}` },
+      date: res.data.reserved.date,
+      id: res.data.reserved.id,
+    };
+    setReserveList([newReserve, ...reserveLists]);
     setSelectDate(null);
     setSelectClass(null);
   };
@@ -51,13 +58,13 @@ export default function ReservePage() {
         <span className="text-5xl font-semibold text-secondtext2 drop-shadow-md">
           Pilates Booking
         </span>
-        <span className="text-xl font-light text-thirdtext drop-shadow-md">
+        <span className="text-xl font-light text-thirdtext">
           Welcome to the world of good health for yourself.
         </span>
       </div>
-      <div className="flex flex-col gap-5 justify-center items-center">
+      <div className="flex flex-col gap-5 p-5 ">
         <div className="flex gap-5">
-          <span className="flex p-1 text-xl">Reserve Date : </span>
+          <span className="flex p-1 text-xl font-semibold">Reserve Date :</span>
           <DatePicker
             className="flex p-1 text-lg border border-maindark rounded-md cursor-pointer"
             selected={selectDate}
@@ -65,7 +72,9 @@ export default function ReservePage() {
           />
         </div>
         <div className="flex gap-5">
-          <span className="flex p-1 text-xl">Pilates Class : </span>
+          <span className="flex p-1 text-xl font-semibold">
+            Pilates Class :
+          </span>
           <div className="flex justify-center items-center border border-maindark rounded-md px-2 py-1 bg-white cursor-pointer">
             <Dropdown
               classrooms={classrooms}
@@ -74,17 +83,26 @@ export default function ReservePage() {
             />
           </div>
         </div>
-        <button
-          className="flex justify-center items-center rounded-md bg-maindark hover:bg-secondtext2 text-white p-2 w-[100px]"
-          onClick={handleSubmit}
-        >
-          Submit
-        </button>
+        <div className="flex justify-center items-center ">
+          <button
+            className="rounded-md bg-maindark hover:bg-secondtext2 text-white p-2 w-[100px]"
+            onClick={handleSubmit}
+          >
+            Submit
+          </button>
+        </div>
       </div>
-      <div className="flex flex-col pt-10">
-        <div>Reservation list</div>
+      <div className="flex flex-col p-5 w-[50%]">
+        <div className="text-2xl font-semibold text-secondtext2 p-3 ">
+          Reservation list
+        </div>
         {reserveLists?.map((list) => (
-          <ReserveLists key={list.id} list={list} />
+          <ReserveLists
+            key={list?.id}
+            list={list}
+            setReserveList={setReserveList}
+            reserveLists={reserveLists}
+          />
         ))}
       </div>
     </div>

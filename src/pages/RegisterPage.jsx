@@ -63,7 +63,7 @@ export default function RegisterPage() {
         <span className="text-4xl font-semibold text-secondtext2 drop-shadow-md">
           Create New Account
         </span>
-        <span className="text-xl font-light text-thirdtext drop-shadow-md pb-3">
+        <span className="text-xl font-light text-thirdtext pb-3">
           Welcome to the world of good health for yourself.
         </span>
 

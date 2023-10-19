@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { removeAccessToken, getAccessToken } from "../utils/local-storage";
+import { getAccessToken } from "../utils/local-storage";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/use-auth";
 
 export default function Header() {
   const navigate = useNavigate();
 
-  const { authUser } = useAuth();
+  const { authUser, logout } = useAuth();
 
   return (
     <header
@@ -32,7 +32,7 @@ export default function Header() {
               <li
                 className="cursor-pointer hover:text-secondtext2 font-semibold"
                 onClick={() => {
-                  removeAccessToken();
+                  logout();
                   navigate("/");
                 }}
               >
@@ -56,7 +56,7 @@ export default function Header() {
               <li
                 className="cursor-pointer hover:text-secondtext2 font-semibold"
                 onClick={() => {
-                  removeAccessToken();
+                  logout();
                   navigate("/");
                 }}
               >

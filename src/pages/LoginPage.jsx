@@ -48,9 +48,12 @@ export default function LoginPage() {
       return setError(validationError);
     }
     setError({});
-    login(input).catch((err) => console.log(err));
-    if (authUser?.role === "USER") navigate("/profile");
-    else navigate("/adtransaction");
+    login(input)
+      .then(() => {
+        if (authUser?.role === "USER") navigate("/profile");
+        else navigate("/adtransaction");
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -66,7 +69,7 @@ export default function LoginPage() {
         <span className="text-5xl font-semibold text-secondtext2 drop-shadow-md">
           SIGN IN
         </span>
-        <span className="text-xl font-light text-thirdtext drop-shadow-md">
+        <span className="text-xl font-light text-thirdtext">
           Welcome to the world of good health for yourself.
         </span>
         <form

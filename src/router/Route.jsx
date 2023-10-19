@@ -11,14 +11,19 @@ import Transaction from "../pages-admin/Transaction";
 import Member from "../pages-admin/Member";
 import Classroom from "../pages-admin/Classroom";
 import Reservation from "../pages-admin/Reservation";
-import AuthAdmin from "../attribute/authenticate/AuthAdmin";
-import AuthUser from "../attribute/authenticate/AuthUser";
-// import RedirectIfAuthenticated from "../attribute/authenticate/RedirectIfAuthticated";
+import AdminAuth from "../attribute/authenticate/AdminAuth";
+import UserAuth from "../attribute/authenticate/UserAuth";
+import RedirectIfAuthenticated from "../attribute/authenticate/RedirectIfAuthticated";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+
+    element: (
+      <RedirectIfAuthenticated>
+        <Layout />
+      </RedirectIfAuthenticated>
+    ),
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/auth/login", element: <LoginPage /> },
@@ -29,9 +34,9 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <AuthUser>
+      <UserAuth>
         <Layout />
-      </AuthUser>
+      </UserAuth>
     ),
     children: [
       { path: "/reservation", element: <ReservePage /> },
@@ -44,9 +49,9 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <AuthAdmin>
+      <AdminAuth>
         <Layout />
-      </AuthAdmin>
+      </AdminAuth>
     ),
     children: [
       { path: "/adtransaction", element: <Transaction /> },
@@ -60,32 +65,3 @@ const router = createBrowserRouter([
 export default function Route() {
   return <RouterProvider router={router} />;
 }
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Layout />,
-//     children: [
-//       { path: "/", element: <HomePage /> },
-//       { path: "/auth/login", element: <LoginPage /> },
-//       { path: "/auth/register", element: <RegisterPage /> },
-//       { path: "/reservation", element: <ReservePage /> },
-//       { path: "/profile", element: <ProfilePage /> },
-//       { path: "/applyclass", element: <ApplyPage /> },
-//       { path: "/payment", element: <PaymentPage /> },
-//       { path: "/adtransaction", element: <Transaction /> },
-//       { path: "/admember", element: <Member /> },
-//       { path: "/adclassroom", element: <Classroom /> },
-//       { path: "/adreserve", element: <Reservation /> },
-//     ],
-//   },
-// ]);
-
-// {
-//   path: "/auth/login",
-//   element : (
-//     <RedirectIfAuthenticated>
-//       <LoginPage />
-//     </RedirectIfAuthenticated>
-//   )
-// },

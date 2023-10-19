@@ -1,28 +1,30 @@
-//import { useState } from "react";
-import axios from "../../config/axios";
+import { useState } from "react";
 import dayjs from "dayjs";
+import Modal from "../../layout/Modal";
 
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CancelClass from "./CancelClass";
 
-export default function ReserveLists({ list }) {
-  // const [cancel, setCancel] = useState();
+export default function ReserveLists({ list, setReserveList, reserveLists }) {
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleCancel = async () => {
-    try {
-      await axios.delete(`/reserve/cancel/${list.id}`);
-    } catch (err) {
-      console.log(err);
-    }
-  };
   return (
-    <div className="flex justify-center items-center p-2 gap-10 text-xl border border-maindark">
-      <div>{list.id}</div>
-      <div>{list.classroom.classname}</div>
-      <div>{dayjs(list.date).format("DD/MM/YYYY")}</div>
-      <button className="cursor-pointer" onClick={handleCancel}>
+    <div className="flex justify-between items-center py-3 px-5 text-lg text-maindark border border-thirdtext rounded-md w-[100%]">
+      <div>{list?.classroom?.classname}</div>
+      <div>{dayjs(list?.date).format("DD/MM/YYYY")}</div>
+      <button className="cursor-pointer" onClick={() => setIsOpen(true)}>
         <FontAwesomeIcon icon={faTrashCan} />
       </button>
+      <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+        <CancelClass
+          key={list.id}
+          list={list}
+          onClose={() => setIsOpen(false)}
+          setReserveList={setReserveList}
+          reserveLists={reserveLists}
+        />
+      </Modal>
     </div>
   );
 }
