@@ -41,7 +41,7 @@ export default function ProfilePage() {
                 <div>Email : {profile.email} </div>
                 <div>Mobile : {profile.mobile} </div>
                 <div className="font-extrabold">
-                  Amount : {profile.sessions[0].amount}
+                  Amount : {profile.sessions[0]?.amount || 0}
                 </div>
               </>
             ) : (
@@ -50,8 +50,14 @@ export default function ProfilePage() {
           </div>
         </div>
         <button
-          className="flex justify-center items-center rounded-md bg-maindark hover:bg-secondtext2 text-xl font-semibold text-white p-3 w-[200px]"
+          className={`flex justify-center items-center rounded-md text-xl font-semibold text-white p-3 w-[200px]
+          ${
+            !profile?.sessions[0]?.amount
+              ? "bg-maingray"
+              : "bg-maindark hover:bg-secondtext2"
+          }`}
           onClick={() => navigate("/reservation")}
+          disabled={!profile?.sessions[0]?.amount}
         >
           Reservation
         </button>

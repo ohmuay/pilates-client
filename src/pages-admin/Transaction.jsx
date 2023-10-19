@@ -3,17 +3,22 @@ import axios from "../config/axios";
 import TransLists from "../attribute/admin/TransLists";
 
 export default function Transaction() {
-  const [lists, setList] = useState([]);
-  // console.log(lists);
+  const [allList, setAllList] = useState([]);
+
+  const fetchTransaction = async () => {
+    try {
+      const result = await axios.get("/admin/transaction");
+      setAllList(result.data.transactions);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
-    axios
-      .get("/admin/transaction")
-      .then((res) => setList(res.data.transactions))
-      .catch((err) => console.log(err));
-  }, []);
+    fetchTransaction();
+  }, [allList]);
 
-  // const
+  // const newStatus = allList.find()
 
   return (
     <div className="flex flex-col justify-center items-center px-10 pt-20">
@@ -44,36 +49,11 @@ export default function Transaction() {
           </tr>
         </thead>
         <tbody>
-          {lists.map((list) => (
-            <TransLists key={list.id} list={list} />
+          {allList.map((list) => (
+            <TransLists key={list.id} list={list} allList={allList} />
           ))}
         </tbody>
       </table>
     </div>
   );
-}
-
-{
-  /* <div className="flex flex-col justify-center items-center px-10 pt-20">
-      <div className="flex flex-row justify-center items-center p-10 gap-20 font-semibold text-xl">
-        <div>id</div>
-        <div>username</div>
-        <div>amount</div>
-        <div>payment</div>
-        <div>status</div>
-      </div>
-      <div className="flex flex-col justify-center items-center p-5">
-        {lists.map((list) => (
-          <TransList
-            key={list.id}
-            id={list.id}
-            name={list.user?.firstName}
-            amount={list.amount}
-            price={list.price}
-            payment={list.paymentImg}
-            status={list.status}
-          />
-        ))}
-      </div>
-    </div> */
 }

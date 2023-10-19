@@ -6,12 +6,10 @@ import axios from "../config/axios";
 
 export default function PaymentPage() {
   const [file, setFile] = useState(null);
-  // console.log(file);
 
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const packageId = params.get("packageId");
-  //console.log(packageId);
 
   const navigate = useNavigate();
 
@@ -26,7 +24,6 @@ export default function PaymentPage() {
         formData.append("packageId", packageId);
       }
       await axios.post("/transaction", formData);
-      // toast.success("Success");
       navigate("/profile");
     } catch (err) {
       console.log(err);

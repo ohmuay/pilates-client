@@ -27,7 +27,7 @@ export default function RegisterPage() {
     confirmpassword: "",
     email: "",
     mobile: "",
-    profileImg: "",
+    //profileImg: "",
   });
 
   const [error, setError] = useState({});

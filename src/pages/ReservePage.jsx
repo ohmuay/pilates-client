@@ -2,16 +2,22 @@ import { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import dayjs from "dayjs";
+import Joi from "joi";
 
 import axios from "../config/axios";
 import Dropdown from "../layout/Dropdown";
 import ReserveLists from "../attribute/reservation/ReserveLists";
+//import ErrorMessage from "../attribute/authenticate/ErrorMessage";
+
+const selectDateSchema = Joi.date().min("now").required();
 
 export default function ReservePage() {
   const [selectDate, setSelectDate] = useState();
   const [selectClass, setSelectClass] = useState();
   const [classrooms, setClassroom] = useState();
   const [reserveLists, setReserveList] = useState();
+
+  const [error, setError] = useState({});
 
   const fetchClassrooms = async () => {
     try {
@@ -25,7 +31,6 @@ export default function ReservePage() {
   const fetchReserveLists = async () => {
     try {
       const result = await axios.get("/user/reservelist");
-      console.log("reservation list", result.data.reservelists);
       setReserveList(result.data.reservelists);
     } catch (err) {
       console.log(err);
@@ -38,8 +43,13 @@ export default function ReservePage() {
   }, []);
 
   const handleSubmit = async () => {
+    const { value, error } = selectDateSchema.validate(selectDate);
+    if (error) {
+      return setError(error);
+    }
+    setError({});
     const res = await axios.post("/user/reserve", {
-      date: dayjs(selectDate),
+      date: dayjs(value),
       classroomId: selectClass.id,
     });
     const newReserve = {

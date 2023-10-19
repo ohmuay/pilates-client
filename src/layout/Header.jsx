@@ -26,9 +26,6 @@ export default function Header() {
               <li className="hover:text-secondtext2 font-semibold">
                 <Link to="/applyclass">APPLYCLASS</Link>
               </li>
-              <li className="hover:text-secondtext2 font-semibold">
-                <Link to="/reservation">RESERVATION</Link>
-              </li>
               <li
                 className="cursor-pointer hover:text-secondtext2 font-semibold"
                 onClick={() => {
@@ -80,4 +77,10 @@ export default function Header() {
       </ul>
     </header>
   );
+}
+
+{
+  /* <li className="hover:text-secondtext2 font-semibold">
+                <Link to="/reservation">RESERVATION</Link>
+              </li> */
 }
