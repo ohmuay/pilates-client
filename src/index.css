@@ -3,10 +3,16 @@
 @tailwind utilities;
 
 * {
-  font-family: "Manrope", sans-serif;
   box-sizing: border-box;
+  font-size: 1rem;
+}
+
+html {
+  font-size: calc(60% + 0.8vmin);
 }
 
 body {
   background-color: #f6f4e8;
+  max-width: 120rem;
+  margin: 0 auto;
 }

@@ -11,48 +11,72 @@ import pilates11 from "../image/pilates11.jpg";
 export default function HomePage() {
   return (
     <div className="flex flex-col justify-center items-center py-20">
-      <div className="flex flex-col justify-center items-center pt-10 pb-32">
-        <span className="text-7xl font-semibold text-secondtext2 pt-10 pb-8 drop-shadow-lg tracking-widest">
-          PILATES STUDIO
-        </span>
-        <span className="text-xl text-thirdtext pb-20 tracking-widest">
-          Healthy lifestyle in your life
-        </span>
-        <div className="h-[750px] overflow-hidden flex justify-center items-center">
-          <img src={cover} alt="pic" />
+      <div className="flex justify-center items-center pt-10 pb-24 w-full gap-4">
+        <div className="flex justify-center items-center w-[40rem] p-2 bg-mainnude rounded-t-full">
+          <img src={cover} alt="pic" className="flex border rounded-t-full" />
+          <div className=" w-[25rem] h-[20rem] rounded-t-full p-16 -z-30 "></div>
+        </div>
+        <div className="flex flex-col justify-center items-center p-5 gap-5 font-Cormorant">
+          <span className="text-5xl font-bold text-secondtext2 tracking-widest">
+            PILATES STUDIO
+          </span>
+          <span className="text-xl text-thirdtext pt-3 tracking-wide">
+            Healthy lifestyle in your life
+          </span>
         </div>
       </div>
-      <div className="flex justify-center items-center gap-20 pb-32">
-        <div className="flex w-[40%] shadow">
-          <img src={group} alt="pic2" />
-        </div>
-        <div className="flex flex-col w-[50rem] p-4 gap-8">
-          <div className="text-secondtext2 text-4xl font-semibold px-4 drop-shadow-md tracking-wider">
-            WHAT IS PILATES?...
+      <div className="flex justify-center items-center gap-10 pb-28 px-4">
+        <div className="flex flex-col w-[40rem] p-2 gap-4">
+          <div className="text-secondtext2 text-3xl font-Cormorant font-semibold px-2">
+            WHAT IS PILATES ?...
           </div>
-          <div className="text-maintext text-2xl p-4 rounded-2xl drop-shadow-md tracking-wide">
+          <div className="text-secondtext2 text-xl font-Cormorant p-4 tracking-wide">
             Pilates is a form of exercise and body conditioning that can improve
             muscle tone, flexibility and strength, as well as help you heal from
             injuries.
           </div>
-          <span className="flex p-4 w-44 justify-center border rounded-full text-white text-xl font-semibold bg-secondtext hover:bg-secondtext2 ">
+          <span className="flex p-4 w-[11rem] justify-center border rounded-full text-white text-xl font-semibold bg-secondtext hover:bg-secondtext2 ">
             <Link to="/auth/register">REGISTER</Link>
           </span>
         </div>
+        <div className="w-[30rem] bg-mainnude p-2 rounded-3xl">
+          <img src={group} alt="pic2" className="border rounded-3xl" />
+        </div>
       </div>
-      <div className="flex flex-col pb-5">
-        <div className="text-secondtext2 font-semibold text-5xl pb-20 flex justify-center drop-shadow-md tracking-wider">
+      <div className="flex p-5">
+        <div className="text-secondtext2 font-semibold font-Cormorant text-3xl p-5 flex justify-center tracking-wider">
           OUR ACTIVITY
         </div>
-        <div className="flex overflow-x-auto h-[390px]">
-          <img src={pilates10} alt="pic3" className="p-1" />
-          <img src={pilatesmen1} alt="pic4" className="p-1" />
-          <img src={pilates8} alt="pic5" className="p-1" />
-          <img src={pilates11} alt="pic5" className="p-1" />
-          <img src={pilates9} alt="pic5" className="p-1" />
-          <img src={pilates4} alt="pic5" className="p-1" />
+        <div className="">
+          <img src={pilates10} alt="pic3" className="border rounded-xl" />
+        </div>
+        <div>
+          <img src={pilatesmen1} alt="pic4" className="border rounded-xl" />
+        </div>
+        <div>
+          <img src={pilates8} alt="pic5" className="border rounded-xl" />
+        </div>
+        <div>
+          <img src={pilates11} alt="pic5" className="border rounded-xl" />
+        </div>
+        <div>
+          <img src={pilates9} alt="pic5" className="border rounded-xl" />
+        </div>
+        <div>
+          <img src={pilates4} alt="pic5" className="border rounded-xl" />
         </div>
       </div>
     </div>
   );
+}
+
+{
+  /* <div className="flex overflow-x-auto h-[20rem] gap-1">
+          <img src={pilates10} alt="pic3" className="border rounded-xl" />
+          <img src={pilatesmen1} alt="pic4" className="border rounded-xl" />
+          <img src={pilates8} alt="pic5" className="border rounded-xl" />
+          <img src={pilates11} alt="pic5" className="border rounded-xl" />
+          <img src={pilates9} alt="pic5" className="border rounded-xl" />
+          <img src={pilates4} alt="pic5" className="border rounded-xl" />
+        </div> */
 }

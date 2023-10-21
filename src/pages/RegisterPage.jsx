@@ -127,13 +127,13 @@ export default function RegisterPage() {
             Error={error.mobile}
           />
           {error.mobile && <ErrorMessage message="Mobile is required" />}
-          <RegisterInput
+          {/* <RegisterInput
             type="text"
             placeholder="Img"
             name="profileImg"
             value={input.profileImg}
             onChange={handleInput}
-          />
+          /> */}
           <button className="bg-maindark hover:bg-secondtext2 rounded-lg text-white p-2 text-lg font-semibold w-[170px]">
             Sign Up
           </button>

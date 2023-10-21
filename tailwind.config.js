@@ -7,16 +7,20 @@ export default {
       colors: {
         maindark: "#1D3124",
         mainlight: "#F6F4E8",
-        maingreen: "#BACEC1",
+        maingreen: "#c8d5b9",
         maingray: "#71717A",
+        mainnude: "#ede6d5",
         maintext: "#1D3124",
-        secondtext: "#E59560",
-        secondtext2: "#D67940",
+        secondtext: "#a47148",
+        secondtext2: "#7f4f24",
         thirdtext: "#9e9e9e"
+      },
+      fontFamily: {
+        'Montserrat': ['Montserrat', 'sans-serif'],
+        'Cormorant': ['"Cormorant Garamond"', 'serif']
       }
     },
   },
   plugins: [],
 }
 
-// #A57C5E
