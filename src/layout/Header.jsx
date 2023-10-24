@@ -14,19 +14,19 @@ export default function Header() {
       className="flex justify-around items-center text-maintext bg-maingreen
     fixed top-0 left-0 right-0 z-30"
     >
-      <div className=" flex justify-center items-center text-base font-medium font-Montserrat tracking-widest">
+      <div className=" flex justify-center items-center text-lg font-medium font-Montserrat tracking-widest">
         <img src={logo2} alt="logo" className="h-14 w-14 rounded-full" />
         PILATES STUDIO
       </div>
-      <ul className="text-base flex flex-row gap-10 font-Montserrat font-medium">
+      <ul className="text-lg flex flex-row gap-10 font-Montserrat font-medium">
         {getAccessToken() ? (
           authUser?.role == "USER" ? (
             <>
               <li className="hover:text-secondtext2">
-                <Link to="/profile">PROFILE</Link>
+                <Link to="/profile">Profile</Link>
               </li>
               <li className="hover:text-secondtext2">
-                <Link to="/applyclass">APPLYCLASS</Link>
+                <Link to="/applyclass">Applyclass</Link>
               </li>
               <li
                 className="hover:text-secondtext2"
@@ -35,22 +35,22 @@ export default function Header() {
                   navigate("/");
                 }}
               >
-                LOGOUT
+                Logout
               </li>
             </>
           ) : (
             <>
               <li className="hover:text-secondtext2">
-                <Link to="/adtransaction">TRANSACTION</Link>
+                <Link to="/adtransaction">Transaction</Link>
               </li>
               <li className="hover:text-secondtext2">
-                <Link to="/adclassroom">CLASSROOM</Link>
+                <Link to="/adclassroom">Classroom</Link>
               </li>
               <li className="hover:text-secondtext2">
-                <Link to="/adreserve">RESERVATION</Link>
+                <Link to="/adreserve">Resevation</Link>
               </li>
               <li className="hover:text-secondtext2">
-                <Link to="/admember">MEMBER</Link>
+                <Link to="/admember">Member</Link>
               </li>
               <li
                 className="hover:text-secondtext2"
@@ -59,20 +59,20 @@ export default function Header() {
                   navigate("/");
                 }}
               >
-                LOGOUT
+                Logout
               </li>
             </>
           )
         ) : (
           <>
             <li className="hover:text-secondtext2">
-              <Link to="/">HOME</Link>
+              <Link to="/">Home</Link>
             </li>
             <li className="hover:text-secondtext2">
-              <Link to="/auth/login">LOGIN</Link>
+              <Link to="/auth/login">Login</Link>
             </li>
             <li className="hover:text-secondtext2">
-              <Link to="/auth/register">REGISTER</Link>
+              <Link to="/auth/register">Register</Link>
             </li>
           </>
         )}

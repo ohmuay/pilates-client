@@ -63,18 +63,18 @@ export default function ReservePage() {
   };
 
   return (
-    <div className="flex flex-col pt-20 justify-center items-center">
-      <div className="flex flex-col justify-center items-center py-10 px-12 gap-7">
-        <span className="text-5xl font-semibold text-secondtext2 drop-shadow-md">
+    <div className="flex flex-col justify-center items-center h-[100%] font-Cormorant">
+      <div className="flex flex-col justify-center items-center p-5 gap-7">
+        <span className="text-5xl font-semibold text-secondtext2 ">
           Pilates Booking
         </span>
         <span className="text-xl font-light text-thirdtext">
           Welcome to the world of good health for yourself.
         </span>
       </div>
-      <div className="flex flex-col gap-5 p-5 ">
+      <div className="flex flex-col gap-5 p-5 justify-center">
         <div className="flex gap-5">
-          <span className="flex p-1 text-xl font-semibold">Reserve Date :</span>
+          <span className="flex p-1 text-xl font-medium">Reserve Date :</span>
           <DatePicker
             className="flex p-1 text-lg border border-maindark rounded-md cursor-pointer"
             selected={selectDate}
@@ -82,7 +82,7 @@ export default function ReservePage() {
           />
         </div>
         <div className="flex gap-5">
-          <span className="flex p-1 text-xl font-semibold">
+          <span className="flex px-2 py-1 text-xl font-medium">
             Pilates Class :
           </span>
           <div className="flex justify-center items-center border border-maindark rounded-md px-2 py-1 bg-white cursor-pointer">
@@ -95,15 +95,15 @@ export default function ReservePage() {
         </div>
         <div className="flex justify-center items-center ">
           <button
-            className="rounded-md bg-maindark hover:bg-secondtext2 text-white p-2 w-[100px]"
+            className="rounded-md bg-maindark hover:bg-secondtext2 text-white p-2 w-[5rem]"
             onClick={handleSubmit}
           >
             Submit
           </button>
         </div>
       </div>
-      <div className="flex flex-col p-5 w-[50%]">
-        <div className="text-2xl font-semibold text-secondtext2 p-3 ">
+      <div className="flex flex-col p-5 w-[50rem]">
+        <div className="text-2xl font-normal text-secondtext2 p-3 ">
           Reservation list
         </div>
         {reserveLists?.map((list) => (

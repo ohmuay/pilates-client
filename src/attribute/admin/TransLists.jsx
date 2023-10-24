@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "../../config/axios";
 
-function TransLists({ list }) {
+function TransLists({ list, handleUpdate }) {
   const [checked, setChecked] = useState(false);
 
   const handleCheckBox = (e) => {
@@ -11,6 +11,7 @@ function TransLists({ list }) {
   const handleSave = async () => {
     try {
       await axios.put(`/admin/session/${list.id}`);
+      handleUpdate(list.id);
     } catch (err) {
       console.log(err);
     }
@@ -18,7 +19,7 @@ function TransLists({ list }) {
 
   return (
     <>
-      <tr className="border dark:border-maindark text-lg">
+      <tr className="text-base">
         <td className="whitespace-nowrap px-6 py-4">{list.id}</td>
         <td className="whitespace-nowrap px-6 py-4">{list.user?.firstName}</td>
         <td className="whitespace-nowrap px-6 py-4">{list.amount}</td>

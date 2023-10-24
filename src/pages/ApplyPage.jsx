@@ -14,9 +14,9 @@ export default function ApplyPage() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center px-10 pt-20">
+    <div className="flex flex-col justify-center h-[100%] font-Cormorant">
       <div className="flex flex-col justify-center items-center gap-4">
-        <div className="text-4xl font-semibold text-secondtext2 drop-shadow-md pt-10">
+        <div className="text-4xl font-semibold text-secondtext2 pt-10">
           Apply Pilates Class
         </div>
         <div className="text-xl font-light text-thirdtext pb-5">

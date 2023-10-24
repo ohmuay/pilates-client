@@ -51,16 +51,12 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="flex flex-auto pt-20 justify-around items-center h-[100%]">
-      <div className="w-[50%]">
-        <img
-          src={pilateslogin}
-          alt="pic"
-          className="flex border shadow rounded-lg"
-        />
+    <div className="flex flex-auto justify-around items-center h-[100%] font-Cormorant">
+      <div className="w-[50rem] bg-mainnude p-3 rounded-3xl">
+        <img src={pilateslogin} alt="pic" className="flex rounded-3xl" />
       </div>
-      <div className="flex flex-col justify-center items-center px-12 gap-3">
-        <span className="text-4xl font-semibold text-secondtext2 drop-shadow-md">
+      <div className="flex flex-col justify-center items-center p-12 gap-3">
+        <span className="text-4xl font-semibold text-secondtext2">
           Create New Account
         </span>
         <span className="text-xl font-light text-thirdtext pb-3">
@@ -134,7 +130,7 @@ export default function RegisterPage() {
             value={input.profileImg}
             onChange={handleInput}
           /> */}
-          <button className="bg-maindark hover:bg-secondtext2 rounded-lg text-white p-2 text-lg font-semibold w-[170px]">
+          <button className="bg-maindark hover:bg-secondtext2 rounded-lg text-white p-2 text-lg font-semibold w-[8rem]">
             Sign Up
           </button>
         </form>

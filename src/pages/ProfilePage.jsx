@@ -16,11 +16,9 @@ export default function ProfilePage() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex pt-10 justify-around items-center h-[100%]">
+    <div className="flex justify-around items-center h-[100%] font-Cormorant">
       <div className="flex flex-col justify-center items-center px-5 gap-10 ">
-        <span className="text-6xl font-semibold text-secondtext2 drop-shadow-md pt-5">
-          Profile
-        </span>
+        <span className="text-6xl font-semibold text-secondtext2">Profile</span>
         <span className="text-xl font-light text-thirdtext pb-5">
           Welcome to the world of good health for yourself.
         </span>
@@ -30,10 +28,10 @@ export default function ProfilePage() {
               src={pilatesProfile}
               alt="picprofile"
               width="250px"
-              className="flex rounded-md shadow-md"
+              className="flex rounded-md"
             />
           </div>
-          <div className="  bg-maingreen flex flex-col justify-center items-start gap-4 p-10 rounded-lg text-xl w-[500px] shadow-md">
+          <div className="bg-maingreen flex flex-col justify-center items-start gap-4 p-10 rounded-xl text-xl w-[27rem]">
             {profile ? (
               <>
                 <div>Firstname : {profile.firstName} </div>
@@ -50,7 +48,7 @@ export default function ProfilePage() {
           </div>
         </div>
         <button
-          className={`flex justify-center items-center rounded-md text-xl font-semibold text-white p-3 w-[200px]
+          className={`flex justify-center items-center rounded-md text-lg font-semibold text-white p-2 w-[9rem]
           ${
             !profile?.sessions[0]?.amount
               ? "bg-maingray"

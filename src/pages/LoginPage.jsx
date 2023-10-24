@@ -57,18 +57,12 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex flex-auto pt-20 justify-around items-center h-[100%]">
-      <div className="w-[50%]">
-        <img
-          src={pilateslogin}
-          alt="piclogin"
-          className="flex border shadow rounded-lg"
-        />
+    <div className="flex flex-auto justify-around items-center h-[100%] font-Cormorant">
+      <div className="w-[50rem] bg-mainnude p-3 rounded-3xl">
+        <img src={pilateslogin} alt="piclogin" className="flex rounded-3xl" />
       </div>
-      <div className="flex flex-col justify-center items-center px-12 gap-7">
-        <span className="text-5xl font-semibold text-secondtext2 drop-shadow-md">
-          SIGN IN
-        </span>
+      <div className="flex flex-col justify-center items-center p-12 gap-7">
+        <span className="text-5xl font-semibold text-secondtext2">SIGN IN</span>
         <span className="text-xl font-light text-thirdtext">
           Welcome to the world of good health for yourself.
         </span>
@@ -94,7 +88,7 @@ export default function LoginPage() {
             Error={error.password}
           />
           {error.password && <ErrorMessage message="Password is required" />}
-          <button className="bg-maindark hover:bg-secondtext2 rounded-xl text-white p-2 text-lg font-semibold w-[170px]">
+          <button className="bg-maindark hover:bg-secondtext2 rounded-xl text-white p-2 text-lg font-semibold w-[8rem]">
             Sign in
           </button>
         </form>
