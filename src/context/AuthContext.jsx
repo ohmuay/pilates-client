@@ -6,16 +6,24 @@ import {
   removeAccessToken,
 } from "../utils/local-storage";
 
-export const Authorize = createContext();
+export const AuthContext = createContext();
 
-export default function AuthorizeProvider({ children }) {
+export default function AuthContextProvider({ children }) {
   const [authUser, setAuthUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (getAccessToken()) {
-      axios.get("/auth/me").then((res) => {
-        setAuthUser(res.data.user);
-      });
+      axios
+        .get("/auth/me")
+        .then((res) => {
+          setAuthUser(res.data.user);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    } else {
+      setIsLoading(false);
     }
   }, []);
 
@@ -41,8 +49,10 @@ export default function AuthorizeProvider({ children }) {
   };
 
   return (
-    <Authorize.Provider value={{ login, authUser, register, logout }}>
+    <AuthContext.Provider
+      value={{ login, authUser, register, logout, isLoading }}
+    >
       {children}
-    </Authorize.Provider>
+    </AuthContext.Provider>
   );
 }

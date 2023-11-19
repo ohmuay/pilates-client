@@ -14,16 +14,11 @@ export default function ApplyPage() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center h-[100%] font-Cormorant">
-      <div className="flex flex-col justify-center items-center gap-4">
-        <div className="text-4xl font-semibold text-secondtext2 pt-10">
-          Apply Pilates Class
-        </div>
-        <div className="text-xl font-light text-thirdtext pb-5">
-          Welcome to the world of good health for yourself.
-        </div>
+    <div className="md:max-[2800px]:flex flex-col justify-center font-Cormorant h-[100%]">
+      <div className="md:flex flex-col justify-center items-center text-4xl font-semibold text-secondtext2">
+        Apply Pilates Class
       </div>
-      <div className="px-20">
+      <div className="md:flex flex-col p-20 gap-4">
         {packages.map((item) => (
           <ApplyClass
             key={item.id}

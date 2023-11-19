@@ -10,7 +10,7 @@ export default function ReserveLists({ list, setReserveList, reserveLists }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex justify-between items-center py-3 px-5 text-lg text-maindark border border-thirdtext rounded-md w-[100%]">
+    <div className="md:max-[2800px]:flex justify-between items-center py-2 px-4 text-lg text-maindark border border-thirdtext rounded-md w-[100%]">
       <div>{list?.classroom?.classname}</div>
       <div>{dayjs(list?.date).format("DD/MM/YYYY")}</div>
       <button className="cursor-pointer" onClick={() => setIsOpen(true)}>

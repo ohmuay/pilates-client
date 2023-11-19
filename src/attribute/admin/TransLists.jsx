@@ -19,24 +19,64 @@ function TransLists({ list, handleUpdate }) {
 
   return (
     <>
-      <tr className="text-base">
-        <td className="whitespace-nowrap px-6 py-4">{list.id}</td>
-        <td className="whitespace-nowrap px-6 py-4">{list.user?.firstName}</td>
-        <td className="whitespace-nowrap px-6 py-4">{list.amount}</td>
-        <td className="whitespace-nowrap px-6 py-4">{list.price}</td>
-        <td className="whitespace-nowrap px-6 py-4">
-          <img src={list.paymentImg} alt="slip" className="w-[15%] h-[15%]" />
+      <tr className="text-maindark">
+        <td className="p-4 border-b border-gray-500 bg-white text-base">
+          {list.id}
+        </td>
+        <td className="p-4 border-b border-gray-500 bg-white text-base">
+          {list.user?.firstName}
+        </td>
+        <td className="p-4 border-b border-gray-500 bg-white text-base">
+          {list.amount}
+        </td>
+        <td className="p-4 border-b border-gray-500 bg-white text-base">
+          {list.price}
+        </td>
+        <td className="p-4 border-b border-gray-500 bg-white text-base">
+          <button
+            onClick={() =>
+              document.getElementById(`modal-${list.id}`).showModal()
+            }
+          >
+            <img
+              id={list.id}
+              src={list.paymentImg}
+              alt="slip"
+              className="w-10 h-10 flex-shrink-0"
+            />
+          </button>
+          <dialog id={`modal-${list.id}`} className="modal modal-middle">
+            <div className="modal-box bg-white">
+              <img id={`modal-${list.id}`} src={list.paymentImg} alt="slip" />
+              <div className="modal-action">
+                <form
+                  method="dialog"
+                  className="text-maindark font-semibold text-lg"
+                >
+                  <button
+                    onClick={() =>
+                      document.getElementById(`modal-${list.id}`).close()
+                    }
+                  >
+                    Close
+                  </button>
+                </form>
+              </div>
+            </div>
+          </dialog>
         </td>
         {list.status === "APPROVED" ? (
           <>
-            <td className="whitespace-nowrap px-6 py-4">{list.status}</td>
-            <td className="whitespace-nowrap px-6 py-4">
+            <td className="p-4 border-b border-gray-500 bg-white text-base">
+              {list.status}
+            </td>
+            <td className="p-4 border-b border-gray-500 bg-white text-base">
               <button disabled={true}>SAVE</button>
             </td>
           </>
         ) : (
           <>
-            <td className="whitespace-nowrap px-6 py-4">
+            <td className="p-4 border-b border-gray-500 bg-white text-base">
               <input
                 type="checkbox"
                 onChange={handleCheckBox}
@@ -44,7 +84,7 @@ function TransLists({ list, handleUpdate }) {
               />
               {checked ? <div>APPROVED</div> : <div>{list.status}</div>}
             </td>
-            <td className="whitespace-nowrap px-6 py-4">
+            <td className="p-4 border-b border-gray-500 bg-white text-base">
               <button
                 className="flex rounded-lg bg-maindark hover:bg-maingreen text-white text-base p-3 "
                 onClick={handleSave}

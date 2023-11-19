@@ -28,32 +28,35 @@ export default function Transaction() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center h-full p-16 font-Cormorant">
-      <div className="flex p-2">
-        <span className="font-semibold text-xl text-maintext">TRANSACTION</span>
+    <div className="md:max-[2800px]:flex flex-col justify-start items-center h-[100%] font-Cormorant pt-10 gap-4">
+      <div className="">
+        <span className="font-semibold justify-center text-xl text-maintext">
+          TRANSACTION
+        </span>
       </div>
-      <div className="overflow-x-auto border border-maindark">
-        <table>
-          <thead className="font-semibold text-base">
+      <div className="overflow-x-auto h-[700px]">
+        <table className="min-w-full border-2">
+          <thead className="">
             <tr>
-              <th scope="col" className="px-6 py-4">
+              <th className="p-4 bg-gray-200 text-left text-base font-semibold text-black">
                 ID
               </th>
-              <th scope="col" className="px-6 py-4">
+              <th className="p-4 bg-gray-200 text-left text-base font-semibold text-black">
                 USERNAME
               </th>
-              <th scope="col" className="px-6 py-4">
+              <th className="p-4 bg-gray-200 text-left text-base font-semibold text-black">
                 AMOUNT
               </th>
-              <th scope="col" className="px-6 py-4">
+              <th className="p-4 bg-gray-200 text-left text-base font-semibold text-black">
                 PRICE
               </th>
-              <th scope="col" className="px-6 py-4">
+              <th className="p-4 bg-gray-200 text-left text-base font-semibold text-black">
                 PAYMENT
               </th>
-              <th scope="col" className="px-6 py-4">
+              <th className="p-4 bg-gray-200 text-left text-base font-semibold text-black">
                 STATUS
               </th>
+              <th className="p-4 bg-gray-200 text-left text-base font-semibold text-black"></th>
             </tr>
           </thead>
           <tbody>

@@ -7,7 +7,7 @@ import Joi from "joi";
 import axios from "../config/axios";
 import Dropdown from "../layout/Dropdown";
 import ReserveLists from "../attribute/reservation/ReserveLists";
-//import ErrorMessage from "../attribute/authenticate/ErrorMessage";
+import { alertBox } from "../utils/sweet-alert";
 
 const selectDateSchema = Joi.date().min("now").required();
 
@@ -16,8 +16,14 @@ export default function ReservePage() {
   const [selectClass, setSelectClass] = useState();
   const [classrooms, setClassroom] = useState();
   const [reserveLists, setReserveList] = useState();
-
   const [error, setError] = useState({});
+
+  const minDate = new Date();
+  minDate.setDate(minDate.getDate() + 1); // start date + 1
+  console.log(minDate);
+
+  const maxDate = new Date();
+  maxDate.setDate(maxDate.getDate() + 7); // start date + 7
 
   const fetchClassrooms = async () => {
     try {
@@ -57,14 +63,15 @@ export default function ReservePage() {
       date: res.data.reserved.date,
       id: res.data.reserved.id,
     };
+    alertBox("Completed !");
     setReserveList([newReserve, ...reserveLists]);
     setSelectDate(null);
     setSelectClass(null);
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-[100%] font-Cormorant">
-      <div className="flex flex-col justify-center items-center p-5 gap-7">
+    <div className="md:max-[2800px]:flex flex-col justify-start items-center h-[100%] font-Cormorant">
+      <div className="md:flex flex-col justify-center items-center p-4 gap-4">
         <span className="text-5xl font-semibold text-secondtext2 ">
           Pilates Booking
         </span>
@@ -72,20 +79,20 @@ export default function ReservePage() {
           Welcome to the world of good health for yourself.
         </span>
       </div>
-      <div className="flex flex-col gap-5 p-5 justify-center">
-        <div className="flex gap-5">
-          <span className="flex p-1 text-xl font-medium">Reserve Date :</span>
+      <div className="md:flex flex-col gap-4 p-4 justify-center bg-mainlight rounded-2xl">
+        <div className="flex gap-4 items-center">
+          <span className="flex p-2 text-lg font-medium">Reserve Date :</span>
           <DatePicker
-            className="flex p-1 text-lg border border-maindark rounded-md cursor-pointer"
+            className="flex p-2 border border-maindark rounded-md cursor-pointer"
             selected={selectDate}
+            minDate={minDate}
+            maxDate={maxDate}
             onChange={(date) => setSelectDate(date)}
           />
         </div>
-        <div className="flex gap-5">
-          <span className="flex px-2 py-1 text-xl font-medium">
-            Pilates Class :
-          </span>
-          <div className="flex justify-center items-center border border-maindark rounded-md px-2 py-1 bg-white cursor-pointer">
+        <div className="md:flex gap-5 items-center">
+          <span className="flex p-2 text-lg font-medium">Pilates Class :</span>
+          <div className="flex items-center border border-maindark rounded-md p-2 bg-white cursor-pointer">
             <Dropdown
               classrooms={classrooms}
               setSelectClass={setSelectClass}
@@ -93,17 +100,17 @@ export default function ReservePage() {
             />
           </div>
         </div>
-        <div className="flex justify-center items-center ">
+        <div className="md:flex justify-center items-center ">
           <button
-            className="rounded-md bg-maindark hover:bg-secondtext2 text-white p-2 w-[5rem]"
+            className="rounded-md bg-secondtext2 hover:bg-maindark text-white p-2 w-[6rem]"
             onClick={handleSubmit}
           >
             Submit
           </button>
         </div>
       </div>
-      <div className="flex flex-col p-5 w-[50rem]">
-        <div className="text-2xl font-normal text-secondtext2 p-3 ">
+      <div className="md:flex flex-col p-4 w-[50rem]">
+        <div className="text-2xl font-normal text-secondtext2 p-2">
           Reservation list
         </div>
         {reserveLists?.map((list) => (

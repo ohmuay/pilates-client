@@ -10,8 +10,8 @@ import pilates11 from "../image/pilates11.jpg";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col justify-center items-center py-10">
-      <div className="flex justify-center items-center pt-20 pb-32 w-full gap-4">
+    <div className="md:max-[2800px]:flex flex-col justify-center items-center py-10">
+      <div className="md:flex justify-center items-center pt-20 pb-32 w-full gap-4">
         <div className="flex justify-center items-center w-[40rem] p-2 bg-mainnude rounded-t-full">
           <img src={cover} alt="pic" className="flex border rounded-t-full" />
           <div className=" w-[25rem] h-[20rem] rounded-t-full p-16 -z-30 "></div>
@@ -25,8 +25,8 @@ export default function HomePage() {
           </span>
         </div>
       </div>
-      <div className="flex justify-center items-center gap-10 px-4">
-        <div className="flex flex-col w-[40rem] p-3 gap-4">
+      <div className="md:flex justify-center items-center gap-10 px-4">
+        <div className="md:flex flex-col w-[40rem] p-3 gap-4">
           <div className="text-secondtext2 text-3xl font-Cormorant font-semibold px-2">
             WHAT IS PILATES ?...
           </div>
@@ -49,11 +49,11 @@ export default function HomePage() {
             <Link to="/auth/register">REGISTER</Link>
           </span>
         </div>
-        <div className="w-[30rem] p-2">
+        <div className="w-[30rem]">
           <img src={group} alt="pic2" className="border rounded-xl" />
         </div>
       </div>
-      <div className="flex pt-36 justify-center items-center gap-20 w-full">
+      <div className="md:flex pt-36 justify-center items-center gap-20 w-full">
         <div className=" flex w-[32rem] h-[23rem] p-3 rounded-2xl bg-mainnude">
           <img src={pilates10} alt="pic3" className="rounded-3xl" />
         </div>
@@ -65,7 +65,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-3 pt-28 pb-10 gap-7">
+      <div className="md:grid grid-cols-3 pt-28 pb-10 gap-7">
         <div className="grid col-span-3 text-2xl text-secondtext2 font-Cormorant ">
           Suitable for all genders
         </div>

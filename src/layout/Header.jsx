@@ -11,10 +11,10 @@ export default function Header() {
 
   return (
     <header
-      className="flex justify-around items-center text-maintext bg-maingreen
+      className="md:max-[2800px]:flex justify-around items-center text-maintext bg-maingreen h-[8vh] rounded-b-full
     fixed top-0 left-0 right-0 z-30"
     >
-      <div className=" flex justify-center items-center text-lg font-medium font-Montserrat tracking-widest">
+      <div className="flex justify-center items-center text-lg font-medium font-Montserrat tracking-widest">
         <img src={logo2} alt="logo" className="h-14 w-14 rounded-full" />
         PILATES STUDIO
       </div>

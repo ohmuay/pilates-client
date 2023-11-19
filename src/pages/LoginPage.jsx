@@ -57,17 +57,18 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex flex-auto justify-around items-center h-[100%] font-Cormorant">
-      <div className="w-[50rem] bg-mainnude p-3 rounded-3xl">
+    <div className="md:max-[2800px]:flex flex-auto justify-around items-center h-[100%] font-Cormorant">
+      <div className="md:shrink-0 w-[50rem] bg-mainnude p-2 rounded-3xl">
         <img src={pilateslogin} alt="piclogin" className="flex rounded-3xl" />
       </div>
-      <div className="flex flex-col justify-center items-center p-12 gap-7">
+      <div className="md:flex flex-col justify-center items-center p-8">
         <span className="text-5xl font-semibold text-secondtext2">SIGN IN</span>
-        <span className="text-xl font-light text-thirdtext">
+        <br />
+        <span className="text-xl font-light text-thirdtext p-2">
           Welcome to the world of good health for yourself.
         </span>
         <form
-          className="  bg-maingreen flex flex-col justify-center items-center gap-5 p-8 rounded-lg min-w-[35rem] min-h-[15rem]"
+          className="  bg-maingreen flex flex-col justify-center items-center gap-4 p-8 rounded-lg min-w-[34rem] min-h-[16rem]"
           onSubmit={handleSubmitForm}
         >
           <LoginInput

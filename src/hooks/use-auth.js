@@ -1,6 +1,6 @@
-import { useContext } from 'react';
-import { Authorize } from '../context/Authorize';
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 export function useAuth() {
-    return useContext(Authorize);
+  return useContext(AuthContext);
 }

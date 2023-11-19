@@ -5,11 +5,15 @@ import Footer from "./Footer.jsx";
 export default function Layout() {
   return (
     <div className="flex flex-col h-[100vh]">
-      <Header />
+      <div className="h-[8vh]">
+        <Header />
+      </div>
       <div className="flex-1">
         <Outlet />
       </div>
-      <Footer />
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }

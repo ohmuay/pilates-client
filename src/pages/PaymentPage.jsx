@@ -1,8 +1,8 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
-// import { toast } from "react-toastify";
 import promtpay from "../image/promtpay.png";
 import axios from "../config/axios";
+import { alertBox } from "../utils/sweet-alert";
 
 export default function PaymentPage() {
   const [file, setFile] = useState(null);
@@ -24,6 +24,7 @@ export default function PaymentPage() {
         formData.append("packageId", packageId);
       }
       await axios.post("/transaction", formData);
+      alertBox("Completed, Pending approval");
       navigate("/profile");
     } catch (err) {
       console.log(err);
