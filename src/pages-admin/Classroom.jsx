@@ -51,62 +51,69 @@ export default function Classroom() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-evenly items-center h-full font-Cormorant text-maindark">
-      <div className="flex">
-        <span className="font-semibold text-2xl">CLASSROOM</span>
+    <div className="flex flex-col items-center h-[100%] font-sans text-black gap-4">
+      <div className="flex items-center justify-center h-[80px]">
+        <span className="font-bold text-2xl">CLASSROOM</span>
       </div>
-      <div className="overflow-x-auto border border-maindark">
-        <table className="table table-xl">
-          <thead className="font-semibold text-lg text-maindark">
+      <div className="overflow-x-auto w-[40%]">
+        <table className="min-w-full">
+          <thead className="border border-secondtext2 text-black">
             <tr>
-              <th scope="col" className="px-6 py-4">
+              <th className="p-2 bg-mainvanilla text-center text-base font-semibold text-black">
                 ID
               </th>
-              <th scope="col" className="px-6 py-4">
+              <th className="p-2 bg-mainvanilla text-center text-base font-semibold text-black">
                 CLASSNAME
               </th>
-              <th scope="col" className="px-6 py-4">
+              <th className="p-2 bg-mainvanilla text-center text-base font-semibold text-black">
                 TIME
               </th>
+              {/* <th className="p-2 bg-mainvanilla text-center text-base font-semibold text-black">
+                USERLIMIT
+              </th> */}
             </tr>
           </thead>
-          <tbody>
+          <tbody className="border border-secondtext2">
             {allClassroom.map((list) => (
               <ClassLists key={list?.id} list={list} />
             ))}
           </tbody>
         </table>
       </div>
-      <form className="grid grid-cols-4 p-5 gap-3" onClick={handleNewClass}>
-        <span className="grid col-span-4 text-lg">Add new classroom</span>
-        <input
-          className="input w-full max-w-xs rounded-md  bg-white p-2"
-          type="text"
-          placeholder="classname"
-          name="classname"
-          value={input.classname}
-          onChange={handleInput}
-        />
-        <input
-          className="input w-full max-w-xs rounded-md  bg-white p-2"
-          type="text"
-          placeholder="time"
-          name="time"
-          value={input.time}
-          onChange={handleInput}
-        />
-        <input
-          className="input w-full max-w-xs rounded-md  bg-white p-2"
-          type="text"
-          placeholder="userlimit"
-          name="userlimit"
-          value={input.userlimit}
-          onChange={handleInput}
-        />
-        <button className="text-maindark border border-maingray rounded-md p-1">
-          Save
-        </button>
-      </form>
+      <div className="flex justify-center items-center p-2 bg-mainvanilla bg-opacity-60 rounded-lg">
+        <form className="flex gap-4" onClick={handleNewClass}>
+          <span className="flex items-center font-medium text-base">
+            Add new classroom
+          </span>
+          <input
+            className="input rounded-md bg-white"
+            type="text"
+            placeholder="classname"
+            name="classname"
+            value={input.classname}
+            onChange={handleInput}
+          />
+          <input
+            className="input rounded-md bg-white"
+            type="text"
+            placeholder="time"
+            name="time"
+            value={input.time}
+            onChange={handleInput}
+          />
+          <input
+            className="input rounded-md bg-white"
+            type="text"
+            placeholder="userlimit"
+            name="userlimit"
+            value={input.userlimit}
+            onChange={handleInput}
+          />
+          <button className="text-white bg-secondtext2 rounded-md p-2">
+            Save
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

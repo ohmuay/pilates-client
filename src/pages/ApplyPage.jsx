@@ -14,11 +14,11 @@ export default function ApplyPage() {
   }, []);
 
   return (
-    <div className="md:max-[2800px]:flex flex-col justify-center font-Cormorant h-[100%]">
-      <div className="md:flex flex-col justify-center items-center text-4xl font-semibold text-secondtext2">
+    <div className="flex flex-col justify-center font-sans h-[100%] gap-4">
+      <div className="flex justify-center items-center text-4xl font-bold text-maintext tracking-wider">
         Apply Pilates Class
       </div>
-      <div className="md:flex flex-col p-20 gap-4">
+      <div className="flex flex-col py-10 px-20 gap-4">
         {packages.map((item) => (
           <ApplyClass
             key={item.id}

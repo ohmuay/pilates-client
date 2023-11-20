@@ -28,38 +28,38 @@ export default function Transaction() {
   }, []);
 
   return (
-    <div className="md:max-[2800px]:flex flex-col justify-start items-center h-[100%] font-Cormorant pt-10 gap-4">
+    <div className="flex flex-col justify-start items-center h-[100%] w-full font-sans pt-6 gap-4">
       <div className="">
-        <span className="font-semibold justify-center text-xl text-maintext">
+        <span className="font-bold justify-center text-xl text-maintext">
           TRANSACTION
         </span>
       </div>
-      <div className="overflow-x-auto h-[700px]">
-        <table className="min-w-full border-2">
-          <thead className="">
+      <div className="overflow-x-auto h-[740px] w-3/4">
+        <table className="min-w-full">
+          <thead className="border border-secondtext2">
             <tr>
-              <th className="p-4 bg-gray-200 text-left text-base font-semibold text-black">
+              <th className="p-4 bg-mainvanilla text-center text-base font-semibold text-black">
                 ID
               </th>
-              <th className="p-4 bg-gray-200 text-left text-base font-semibold text-black">
+              <th className="p-4 bg-mainvanilla text-center text-base font-semibold text-black">
                 USERNAME
               </th>
-              <th className="p-4 bg-gray-200 text-left text-base font-semibold text-black">
+              <th className="p-4 bg-mainvanilla text-center text-base font-semibold text-black">
                 AMOUNT
               </th>
-              <th className="p-4 bg-gray-200 text-left text-base font-semibold text-black">
+              <th className="p-4 bg-mainvanilla text-center text-base font-semibold text-black">
                 PRICE
               </th>
-              <th className="p-4 bg-gray-200 text-left text-base font-semibold text-black">
+              <th className="p-4 bg-mainvanilla text-center text-base font-semibold text-black">
                 PAYMENT
               </th>
-              <th className="p-4 bg-gray-200 text-left text-base font-semibold text-black">
+              <th className="p-4 bg-mainvanilla text-center text-base font-semibold text-black">
                 STATUS
               </th>
-              <th className="p-4 bg-gray-200 text-left text-base font-semibold text-black"></th>
+              <th className="p-4 bg-mainvanilla text-center text-base font-semibold text-black"></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="border border-secondtext2">
             {allList.map((list) => (
               <TransLists
                 key={list.id}

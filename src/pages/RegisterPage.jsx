@@ -51,22 +51,21 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="md:max-[2800px]:flex flex-auto justify-around items-center h-[100%] font-Cormorant">
-      <div className="md:shrink-0 w-[50rem] bg-mainnude p-2 rounded-3xl">
+    <div className="flex justify-center items-center h-[100%] font-sans">
+      <div className="w-[800px] bg-mainnude p-4 rounded-3xl">
         <img src={pilateslogin} alt="pic" className="flex rounded-3xl" />
       </div>
-      <div className="md:flex flex-col justify-center items-center p-8">
+      <div className="flex flex-col justify-center items-center p-8">
         <span className="text-4xl font-semibold text-secondtext2">
           Create New Account
         </span>
-        <br />
         <span className="text-xl font-light text-thirdtext p-2">
           Welcome to the world of good health for yourself.
         </span>
 
         <form
           onSubmit={handleSubmitForm}
-          className="bg-maingreen flex flex-col justify-center items-center gap-4 p-6 rounded-lg min-w-[34rem] min-h-[16rem]"
+          className="bg-mainvanilla bg-opacity-80 flex flex-col justify-center items-center gap-4 p-6 rounded-lg min-w-[34rem] min-h-[16rem]"
         >
           <RegisterInput
             type="text"
@@ -131,7 +130,7 @@ export default function RegisterPage() {
             value={input.profileImg}
             onChange={handleInput}
           /> */}
-          <button className="bg-maindark hover:bg-secondtext2 rounded-lg text-white p-2 text-lg font-semibold w-[8rem]">
+          <button className="bg-maindark hover:bg-secondtext2 rounded-lg text-white p-2 text-base font-medium w-[100px]">
             Sign Up
           </button>
         </form>

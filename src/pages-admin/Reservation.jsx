@@ -19,26 +19,28 @@ export default function Reservation() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center h-full font-Cormorant">
-      <div className="flex p-2">
-        <span className="font-semibold text-xl text-maintext">RESERVATION</span>
+    <div className="flex flex-col justify-start items-center h-[100%] font-sans text-black gap-4">
+      <div className="">
+        <span className="font-bold justify-center text-xl text-maintext p-2">
+          RESERVATION
+        </span>
       </div>
-      <div className="overflow-x-auto border border-maindark">
-        <table>
-          <thead className="font-semibold text-base">
+      <div className="overflow-x-auto h-[740px] w-auto">
+        <table className="">
+          <thead className="border border-secondtext2">
             <tr>
-              <th scope="col" className="px-6 py-4">
+              <th className="p-2 bg-mainvanilla text-center text-base font-semibold text-black">
                 USERNAME
               </th>
-              <th scope="col" className="px-6 py-4">
+              <th className="p-2 bg-mainvanilla text-center text-base font-semibold text-black">
                 CLASSNAME
               </th>
-              <th scope="col" className="px-6 py-4">
+              <th className="p-2 bg-mainvanilla text-center text-base font-semibold text-black">
                 DATE
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="border border-secondtext2">
             {allReserve?.map((list) => (
               <AllReserveLists key={list.id} list={list} />
             ))}

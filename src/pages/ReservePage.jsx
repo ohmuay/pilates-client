@@ -70,29 +70,29 @@ export default function ReservePage() {
   };
 
   return (
-    <div className="md:max-[2800px]:flex flex-col justify-start items-center h-[100%] font-Cormorant">
-      <div className="md:flex flex-col justify-center items-center p-4 gap-4">
+    <div className="flex flex-col h-[100%] font-sans text-maintext">
+      <div className="flex flex-col justify-center items-center p-4 gap-4 h-[160px] bg-mainvanilla">
         <span className="text-5xl font-semibold text-secondtext2 ">
           Pilates Booking
         </span>
-        <span className="text-xl font-light text-thirdtext">
+        <span className="text-base font-medium text-mainlight">
           Welcome to the world of good health for yourself.
         </span>
       </div>
-      <div className="md:flex flex-col gap-4 p-4 justify-center bg-mainlight rounded-2xl">
-        <div className="flex gap-4 items-center">
-          <span className="flex p-2 text-lg font-medium">Reserve Date :</span>
+      <div className="flex flex-col gap-4 p-4 items-center">
+        <div className="flex gap-4 items-center w-[320px]">
+          <span className="flex p-2 text-lg font-medium">Date :</span>
           <DatePicker
-            className="flex p-2 border border-maindark rounded-md cursor-pointer"
+            className="flex p-2 border border-secondtext2 rounded-md cursor-pointer bg-white"
             selected={selectDate}
             minDate={minDate}
             maxDate={maxDate}
             onChange={(date) => setSelectDate(date)}
           />
         </div>
-        <div className="md:flex gap-5 items-center">
-          <span className="flex p-2 text-lg font-medium">Pilates Class :</span>
-          <div className="flex items-center border border-maindark rounded-md p-2 bg-white cursor-pointer">
+        <div className="flex gap-4 items-center w-[320px]">
+          <span className="flex p-2 text-lg font-medium">Class :</span>
+          <div className="flex items-center border border-secondtext2 rounded-md p-2 bg-white cursor-pointer">
             <Dropdown
               classrooms={classrooms}
               setSelectClass={setSelectClass}
@@ -100,7 +100,7 @@ export default function ReservePage() {
             />
           </div>
         </div>
-        <div className="md:flex justify-center items-center ">
+        <div className="flex justify-center items-center ">
           <button
             className="rounded-md bg-secondtext2 hover:bg-maindark text-white p-2 w-[6rem]"
             onClick={handleSubmit}
@@ -109,18 +109,20 @@ export default function ReservePage() {
           </button>
         </div>
       </div>
-      <div className="md:flex flex-col p-4 w-[50rem]">
-        <div className="text-2xl font-normal text-secondtext2 p-2">
+      <div className="flex flex-col justify-start items-center gap-4 p-4 w-full h-[440px] bg-mainnude bg-opacity-70">
+        <div className="text-2xl font-semibold text-secondtext2 p-2">
           Reservation list
         </div>
-        {reserveLists?.map((list) => (
-          <ReserveLists
-            key={list?.id}
-            list={list}
-            setReserveList={setReserveList}
-            reserveLists={reserveLists}
-          />
-        ))}
+        <div className="">
+          {reserveLists?.map((list) => (
+            <ReserveLists
+              key={list?.id}
+              list={list}
+              setReserveList={setReserveList}
+              reserveLists={reserveLists}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

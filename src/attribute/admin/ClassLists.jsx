@@ -1,10 +1,16 @@
 export default function ClassLists({ list }) {
   return (
     <>
-      <tr className=" text-lg">
-        <td className="whitespace-nowrap px-6 py-4">{list.id}</td>
-        <td className="whitespace-nowrap px-6 py-4">{list.classname}</td>
-        <td className="whitespace-nowrap px-6 py-4">{list.time}</td>
+      <tr>
+        <td className="p-2 border-b border-secondtext2 bg-white text-center text-base">
+          {list.id}
+        </td>
+        <td className="p-2 border-b border-secondtext2 bg-white text-center text-base">
+          {list.classname}
+        </td>
+        <td className="p-2 border-b border-secondtext2 bg-white text-center text-base">
+          {list.time}
+        </td>
       </tr>
     </>
   );

@@ -20,19 +20,19 @@ function TransLists({ list, handleUpdate }) {
   return (
     <>
       <tr className="text-maindark">
-        <td className="p-4 border-b border-gray-500 bg-white text-base">
+        <td className="border-b border-secondtext2 bg-white text-center text-base">
           {list.id}
         </td>
-        <td className="p-4 border-b border-gray-500 bg-white text-base">
+        <td className="border-b border-secondtext2 bg-white text-center text-base">
           {list.user?.firstName}
         </td>
-        <td className="p-4 border-b border-gray-500 bg-white text-base">
+        <td className="border-b border-secondtext2 bg-white text-center text-base">
           {list.amount}
         </td>
-        <td className="p-4 border-b border-gray-500 bg-white text-base">
+        <td className="border-b border-secondtext2 bg-white text-center text-base">
           {list.price}
         </td>
-        <td className="p-4 border-b border-gray-500 bg-white text-base">
+        <td className="border-b border-secondtext2 bg-white text-center text-base">
           <button
             onClick={() =>
               document.getElementById(`modal-${list.id}`).showModal()
@@ -67,30 +67,32 @@ function TransLists({ list, handleUpdate }) {
         </td>
         {list.status === "APPROVED" ? (
           <>
-            <td className="p-4 border-b border-gray-500 bg-white text-base">
+            <td className="border-b border-secondtext2 bg-white text-center text-base">
               {list.status}
             </td>
-            <td className="p-4 border-b border-gray-500 bg-white text-base">
+            <td className="border-b border-secondtext2 bg-white text-center text-base">
               <button disabled={true}>SAVE</button>
             </td>
           </>
         ) : (
           <>
-            <td className="p-4 border-b border-gray-500 bg-white text-base">
+            <td className="border-b border-secondtext2 bg-white text-center text-sm p-2">
               <input
                 type="checkbox"
                 onChange={handleCheckBox}
-                className="w-[20px] h-[20px] flex border"
+                className="w-[20px] h-[20px]"
               />
               {checked ? <div>APPROVED</div> : <div>{list.status}</div>}
             </td>
-            <td className="p-4 border-b border-gray-500 bg-white text-base">
-              <button
-                className="flex rounded-lg bg-maindark hover:bg-maingreen text-white text-base p-3 "
-                onClick={handleSave}
-              >
-                SAVE
-              </button>
+            <td className="border-b border-secondtext2 bg-white text-center text-base">
+              <div className="flex justify-center">
+                <button
+                  className="rounded-lg bg-maindark hover:bg-maingreen text-white text-sm p-2 "
+                  onClick={handleSave}
+                >
+                  SAVE
+                </button>
+              </div>
             </td>
           </>
         )}

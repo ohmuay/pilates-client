@@ -9,10 +9,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function Footer() {
   return (
     <>
-      <footer className=" bg-maingreen rounded-t-full ">
-        <div className="flex justify-around text-maintext font-light items-center px-4 py-3 font-Montserrat tracking-widest">
-          <div className="flex text-sm font-light">Pilates Studio</div>
-          <div className="flex text-sm font-light gap-1 justify-center items-center">
+      <footer className=" bg-mainnude">
+        <div className="flex justify-around text-maintext text-lg items-center px-4 py-3 font-Montserrat tracking-widest">
+          <div className="flex text-sm">Pilates Studio</div>
+          <div className="flex text-sm  gap-1 justify-center items-center">
             Copyright
             <FontAwesomeIcon icon={faCopyright} size="sm" />
             2023 | All right reserved

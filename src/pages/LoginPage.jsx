@@ -57,18 +57,19 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="md:max-[2800px]:flex flex-auto justify-around items-center h-[100%] font-Cormorant">
-      <div className="md:shrink-0 w-[50rem] bg-mainnude p-2 rounded-3xl">
+    <div className="bg-mainlight flex justify-center items-center h-[100%]">
+      <div className="w-[800px] bg-mainnude p-4 rounded-3xl">
         <img src={pilateslogin} alt="piclogin" className="flex rounded-3xl" />
       </div>
-      <div className="md:flex flex-col justify-center items-center p-8">
-        <span className="text-5xl font-semibold text-secondtext2">SIGN IN</span>
-        <br />
-        <span className="text-xl font-light text-thirdtext p-2">
+      <div className="flex flex-col justify-center items-center p-8">
+        <span className="text-5xl font-semibold text-secondtext2 font-sans">
+          SIGN IN
+        </span>
+        <span className="text-xl font-light text-thirdtext p-2 font-sans">
           Welcome to the world of good health for yourself.
         </span>
         <form
-          className="  bg-maingreen flex flex-col justify-center items-center gap-4 p-8 rounded-lg min-w-[34rem] min-h-[16rem]"
+          className="bg-mainvanilla bg-opacity-80 flex flex-col justify-center items-center gap-4 p-8 rounded-lg w-[480px] h-[260px]"
           onSubmit={handleSubmitForm}
         >
           <LoginInput
@@ -89,7 +90,7 @@ export default function LoginPage() {
             Error={error.password}
           />
           {error.password && <ErrorMessage message="Password is required" />}
-          <button className="bg-maindark hover:bg-secondtext2 rounded-xl text-white p-2 text-lg font-semibold w-[8rem]">
+          <button className="bg-maindark hover:bg-secondtext2 rounded-xl text-white p-2 text-base font-medium w-[100px]">
             Sign in
           </button>
         </form>

@@ -4,15 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        maindark: "#1D3124",
+        maindark: "#455947",
         mainlight: "#F6F4E8",
-        maingreen: "#c8d5b9",
+        maingreen: "#c9d9c3",
         maingray: "#71717A",
         mainnude: "#ede6d5",
+        mainvanilla: "#d4bda1",
         maintext: "#1D3124",
-        secondtext: "#a47148",
-        secondtext2: "#7f4f24",
-        thirdtext: "#9e9e9e",
+        secondtext: "#c78853",
+        secondtext2: "#864622",
+        thirdtext: "#383330",
       },
       fontFamily: {
         Montserrat: ["Montserrat", "sans-serif"],

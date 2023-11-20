@@ -11,14 +11,16 @@ export default function Header() {
 
   return (
     <header
-      className="md:max-[2800px]:flex justify-around items-center text-maintext bg-maingreen h-[8vh] rounded-b-full
+      className="flex justify-around items-center text-maintext bg-mainnude shadow-sm
     fixed top-0 left-0 right-0 z-30"
     >
-      <div className="flex justify-center items-center text-lg font-medium font-Montserrat tracking-widest">
-        <img src={logo2} alt="logo" className="h-14 w-14 rounded-full" />
-        PILATES STUDIO
+      <div className="flex justify-center items-center">
+        <img src={logo2} alt="logo" className="h-16 w-16 rounded-full" />
+        <p className="text-lg font-bold font-sans tracking-widest">
+          PILATES STUDIO{" "}
+        </p>
       </div>
-      <ul className="text-lg flex flex-row gap-10 font-Montserrat font-medium">
+      <ul className="flex flex-row gap-10 font-sans font-bold">
         {getAccessToken() ? (
           authUser?.role == "USER" ? (
             <>
@@ -65,7 +67,7 @@ export default function Header() {
           )
         ) : (
           <>
-            <li className="hover:text-secondtext2">
+            <li className="hover:text-secondtext2 ">
               <Link to="/">Home</Link>
             </li>
             <li className="hover:text-secondtext2">
