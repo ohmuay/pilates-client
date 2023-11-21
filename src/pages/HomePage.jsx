@@ -29,8 +29,8 @@ export default function HomePage() {
           </span>
         </div>
       </div>
-      <div className="bg-mainvanilla flex justify-center items-center gap-24 h-[540px] z-20">
-        <div className="bg-mainnude bg-opacity-90 p-4 flex flex-col w-[560px] gap-2 rounded-2xl">
+      <div className="bg-mainvanilla flex justify-center items-center gap-24 h-[540px] z-10">
+        <div className="bg-mainnude bg-opacity-90 p-4 flex flex-col w-[660px] gap-2 rounded-2xl">
           <div className="text-secondtext2 text-2xl font-sans font-semibold px-2">
             WHAT IS PILATES ?...
           </div>

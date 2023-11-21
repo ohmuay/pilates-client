@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <header
-      className="flex justify-around items-center text-maintext bg-mainnude shadow-sm
+      className="flex justify-around items-center text-secondtext2 bg-mainnude shadow-sm
     fixed top-0 left-0 right-0 z-30"
     >
       <div className="flex justify-center items-center">
@@ -24,14 +24,14 @@ export default function Header() {
         {getAccessToken() ? (
           authUser?.role == "USER" ? (
             <>
-              <li className="hover:text-secondtext2">
+              <li className="hover:text-maintext">
                 <Link to="/profile">Profile</Link>
               </li>
-              <li className="hover:text-secondtext2">
+              <li className="hover:text-maintext">
                 <Link to="/applyclass">Applyclass</Link>
               </li>
               <li
-                className="hover:text-secondtext2"
+                className="hover:text-maintext"
                 onClick={() => {
                   logout();
                   navigate("/");
@@ -42,20 +42,20 @@ export default function Header() {
             </>
           ) : (
             <>
-              <li className="hover:text-secondtext2">
+              <li className="hover:text-maintext">
                 <Link to="/adtransaction">Transaction</Link>
               </li>
-              <li className="hover:text-secondtext2">
+              <li className="hover:text-maintext">
                 <Link to="/adclassroom">Classroom</Link>
               </li>
-              <li className="hover:text-secondtext2">
+              {/* <li className="hover:text-maintext">
                 <Link to="/adreserve">Resevation</Link>
               </li>
-              <li className="hover:text-secondtext2">
+              <li className="hover:text-maintext">
                 <Link to="/admember">Member</Link>
-              </li>
+              </li> */}
               <li
-                className="hover:text-secondtext2"
+                className="hover:text-maintext"
                 onClick={() => {
                   logout();
                   navigate("/");
@@ -67,13 +67,13 @@ export default function Header() {
           )
         ) : (
           <>
-            <li className="hover:text-secondtext2 ">
+            <li className="hover:text-maintext">
               <Link to="/">Home</Link>
             </li>
-            <li className="hover:text-secondtext2">
+            <li className="hover:text-maintext">
               <Link to="/auth/login">Login</Link>
             </li>
-            <li className="hover:text-secondtext2">
+            <li className="hover:text-maintext">
               <Link to="/auth/register">Register</Link>
             </li>
           </>

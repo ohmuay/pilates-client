@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "../config/axios";
 import TransLists from "../attribute/admin/TransLists";
+import Pagination from "./component/Pagination";
 
 export default function Transaction() {
   const [allList, setAllList] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [recordsPerPage] = useState(10);
 
   const fetchTransaction = async () => {
     try {
@@ -13,6 +16,11 @@ export default function Transaction() {
       console.log(err);
     }
   };
+
+  const indexOfLastRecord = currentPage * recordsPerPage;
+  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+  const currentRecords = allList.slice(indexOfFirstRecord, indexOfLastRecord);
+  const nPages = Math.ceil(allList.length / recordsPerPage);
 
   const handleUpdate = (id) => {
     const idx = allList.findIndex((el) => el.id === id);
@@ -60,7 +68,7 @@ export default function Transaction() {
             </tr>
           </thead>
           <tbody className="border border-secondtext2">
-            {allList.map((list) => (
+            {currentRecords.map((list) => (
               <TransLists
                 key={list.id}
                 list={list}
@@ -69,6 +77,11 @@ export default function Transaction() {
             ))}
           </tbody>
         </table>
+        <Pagination
+          nPages={nPages}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
       </div>
     </div>
   );
