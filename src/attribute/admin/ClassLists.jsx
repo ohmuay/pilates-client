@@ -2,9 +2,9 @@ export default function ClassLists({ list }) {
   return (
     <>
       <tr>
-        <td className="p-2 border-b border-secondtext2 bg-white text-center text-base">
+        {/* <td className="p-2 border-b border-secondtext2 bg-white text-center text-base">
           {list.id}
-        </td>
+        </td> */}
         <td className="p-2 border-b border-secondtext2 bg-white text-center text-base">
           {list.classname}
         </td>

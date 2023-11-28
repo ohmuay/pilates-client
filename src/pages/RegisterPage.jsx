@@ -51,7 +51,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="flex justify-center items-center h-[100%] font-sans">
+    <div className="flex justify-center items-center h-[100%] font-sans text-maintext">
       <div className="w-[800px] bg-mainnude p-4 rounded-3xl">
         <img src={pilateslogin} alt="pic" className="flex rounded-3xl" />
       </div>

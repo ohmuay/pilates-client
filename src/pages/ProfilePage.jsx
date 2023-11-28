@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "../config/axios";
-import pilatesProfile from "../image/girl.jpg";
+import pilatesProfile from "../image/pilares111.jpg";
 
 export default function ProfilePage() {
   const [profile, setProfile] = useState();

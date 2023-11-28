@@ -59,9 +59,9 @@ export default function Classroom() {
         <table className="min-w-full">
           <thead className="border border-secondtext2 text-black">
             <tr>
-              <th className="p-2 bg-mainvanilla text-center text-base font-semibold text-black">
+              {/* <th className="p-2 bg-mainvanilla text-center text-base font-semibold text-black">
                 ID
-              </th>
+              </th> */}
               <th className="p-2 bg-mainvanilla text-center text-base font-semibold text-black">
                 CLASSNAME
               </th>

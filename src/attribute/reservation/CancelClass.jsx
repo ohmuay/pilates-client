@@ -10,7 +10,7 @@ export default function CancelClass({
   const handleCancel = async () => {
     try {
       await axios.delete(`/reserve/cancel/${list.id}`);
-      alertBox("Cancel class");
+      alertBox("Cancel Completed");
       onClose();
       setReserveList(reserveLists.filter((el) => el.id != list.id));
     } catch (err) {

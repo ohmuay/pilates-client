@@ -63,7 +63,7 @@ export default function ReservePage() {
       date: res.data.reserved.date,
       id: res.data.reserved.id,
     };
-    alertBox("Completed !");
+    alertBox("Booking Completed");
     setReserveList([newReserve, ...reserveLists]);
     setSelectDate(null);
     setSelectClass(null);

@@ -17,3 +17,13 @@ export const alertBox = (title) => {
     timer: 1500,
   });
 };
+
+export const alertFailedBox = (title) => {
+  return Swal.fire({
+    position: "center",
+    icon: "failed",
+    title: title,
+    showConfirmButton: false,
+    timer: 1500,
+  });
+};
